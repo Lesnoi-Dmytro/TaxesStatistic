@@ -21,7 +21,7 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 			if (true) {
-				throw new IOException();
+//				throw new IOException();
 			}
 			Command command = Command.getCommand(0);
 			command.action(workers, companies);
