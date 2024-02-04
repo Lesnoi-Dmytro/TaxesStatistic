@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="FileAppender" fileName="logger.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}%n%msg%n"/>
+        </File>
+        <SMTP name="EmailAppender" subject="Error in Lab8" from="dmytro.lesnoi.oi.2022@lpnu.ua"
+            to="dmytro.lesnoi.oi.2022@lpnu.ua" SMTPHost="smtp.gmail.com" SMTPPort="465"
+            SMTPUsername="dmytro.lesnoi.oi.2022@lpnu.ua" SMTPPassword="jankbjaojymqqalg">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}%n%msg%n"/>
+        </SMTP>
+    </Appenders>
+    <Loggers>
+        <Root>
+        </Root>
+        <Logger name="file" level="info">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+        <Logger name="email" level="error">
+            <AppenderRef ref="EmailAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
